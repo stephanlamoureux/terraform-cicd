@@ -44,7 +44,7 @@ resource "aws_instance" "appserver" {
 }
 
 # Define the security group for public subnet
-resource "aws_security_group" "ec2OneSG" {
+resource "aws_security_group" "ec2OneSG-new" {
   name        = "ec2sg-test_web"
   description = "Allow incoming HTTP connections & SSH access"
 
