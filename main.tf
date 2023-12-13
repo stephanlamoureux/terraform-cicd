@@ -39,12 +39,12 @@ resource "aws_instance" "appserver" {
   instance_type          = "t2.micro"
   vpc_security_group_ids = ["${aws_security_group.ec2OneSG.id}"]
   tags = {
-    Name = "ec2OneSG"
+    Name = "ec2OneSG-new"
   }
 }
 
 # Define the security group for public subnet
-resource "aws_security_group" "ec2OneSG-new" {
+resource "aws_security_group" "ec2OneSG" {
   name        = "ec2sg-test_web"
   description = "Allow incoming HTTP connections & SSH access"
 
