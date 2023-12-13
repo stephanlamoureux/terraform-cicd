@@ -9,6 +9,14 @@ terraform {
       version = "~> 4.16"
     }
   }
+
+  backend "s3" {
+    bucket         = "tf-s3-state-324345"
+    key            = "tfstates/codeplatoon/s3demo.tfstate"
+    region         = "eu-central-1"
+    dynamodb_table = "tf_dynmodb_state_lock"
+    encrypt        = true
+  }
 }
 
 data "aws_ami" "amazon_linux" {
